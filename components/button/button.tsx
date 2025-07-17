@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-type Variant = "sunflower" | "midnight" | "golden" | "peach";
+type Variant = "sunflower" | "midnight" | "golden" | "peach" | "white";
 type IconPosition = "left" | "right";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,6 +17,7 @@ const variantClasses: Record<Variant, string> = {
   midnight: "bg-midnight text-white hover:bg-purple-900",
   golden: "bg-golden text-midnight hover:bg-yellow-500",
   peach: "bg-peach text-midnight hover:bg-yellow-200",
+  white: "bg-white text-midnight hover:bg-sunflower",
 };
 
 export const Button: React.FC<ButtonProps> = ({
@@ -28,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   const baseClasses =
-    "inline-flex items-center gap-2 px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+    "inline-flex items-center gap-2 px-5 py-2 rounded-full font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
   const variantClass = variantClasses[variant];
 
   return (

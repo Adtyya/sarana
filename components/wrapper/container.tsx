@@ -6,7 +6,7 @@ type ContainerProps = {
 
 export default function Container({ children }: ContainerProps): JSX.Element {
   return (
-    <div className="w-full px-6 lg:max-w-5xl xl:max-w-7xl mx-auto my-3.5">
+    <div className="w-full px-6 lg:max-w-5xl xl:max-w-7xl mx-auto">
       {children}
     </div>
   );
