@@ -26,7 +26,7 @@ export const Paragraph: React.FC<ParagraphProps> = ({
 }) => {
   return (
     <p
-      className={clsx(paragraphStyles[size], "text-gray-700", className)}
+      className={clsx(paragraphStyles[size], "text-black", className)}
       {...rest}
       {...(html ? { dangerouslySetInnerHTML: { __html: html } } : {})}
     >

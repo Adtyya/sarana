@@ -13,7 +13,7 @@ const menuList = [
   },
   {
     name: "Service",
-    path: "#",
+    path: "/services",
   },
   {
     name: "Tracking",

@@ -6,3 +6,4 @@ export const homePageHero = `${rootPath}homepage_hero.png`;
 export const aboutUsCar = `${rootPath}about_us_car.png`;
 export const serviceBox = `${rootPath}service_box.png`;
 export const aboutPageHero = `${rootPath}about_page_hero.jpg`;
+export const servicePageHero = `${rootPath}service_page_hero.jpg`;
