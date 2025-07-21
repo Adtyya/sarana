@@ -6,7 +6,8 @@ type ParagraphSize = "sm" | "base" | "lg" | "xl";
 interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
   size?: ParagraphSize;
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  html?: string; // new prop
 }
 
 const paragraphStyles: Record<ParagraphSize, string> = {
@@ -20,14 +21,16 @@ export const Paragraph: React.FC<ParagraphProps> = ({
   size = "base",
   className,
   children,
+  html,
   ...rest
 }) => {
   return (
     <p
-      className={clsx(paragraphStyles[size], "text-gray-700", className)}
+      className={clsx(paragraphStyles[size], "text-black", className)}
       {...rest}
+      {...(html ? { dangerouslySetInnerHTML: { __html: html } } : {})}
     >
-      {children}
+      {!html && children}
     </p>
   );
 };

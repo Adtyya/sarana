@@ -9,11 +9,11 @@ import { Paragraph } from "@/components/text/paragraph";
 const menuList = [
   {
     name: "About",
-    path: "#",
+    path: "/about-us",
   },
   {
     name: "Service",
-    path: "#",
+    path: "/services",
   },
   {
     name: "Tracking",
@@ -46,7 +46,7 @@ export default function Navbar(): JSX.Element {
               aria-label="WindUI logo"
               aria-current="page"
               className="flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none"
-              href="#"
+              href="/"
             >
               <div className="relative w-[160px] h-[51px]">
                 <Image src={appLogoTransparent} alt="app_logo" fill />

@@ -1,4 +1,5 @@
-import { Hero, About, Service, Flow, Question } from "./section";
+import { Hero, About, Service, Flow } from "./section";
+import Question from "@/components/global/question";
 
 export default function HomeScreen() {
   return (
