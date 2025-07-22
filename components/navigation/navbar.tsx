@@ -17,7 +17,7 @@ const menuList = [
   },
   {
     name: "Tracking",
-    path: "#",
+    path: "/tracking",
   },
   {
     name: "Service Announcement",

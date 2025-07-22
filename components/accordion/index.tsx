@@ -26,9 +26,7 @@ export const Accordion: React.FC<AccordionProps> = ({ items, className }) => {
             <Paragraph size="lg">{item.title}</Paragraph>
             <Plus className="absolute right-0 top-1 w-4 h-4 stroke-black transition-transform duration-300 group-open:rotate-45" />
           </summary>
-          <p className="mt-4">
-            <Paragraph>{item.content}</Paragraph>
-          </p>
+          <Paragraph className="mt-4">{item.content}</Paragraph>
         </details>
       ))}
     </section>
