@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { aboutPageHero } from "@/components/constant/image";
+import { anouncPageHero } from "@/components/constant/image";
 import { Heading } from "@/components/text/heading";
 import { Paragraph } from "@/components/text/paragraph";
 
@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="relative h-[calc(100vh-5.5rem)] w-full overflow-hidden">
       {/* Layer background image */}
       <Image
-        src={aboutPageHero}
+        src={anouncPageHero}
         fill
         alt="homepagehero"
         quality={100}
@@ -24,7 +24,7 @@ export default function Hero() {
               level={1}
               className="font-normal text-midnight leading-snug"
             >
-              International eCommerce Shipping Solutions Provider
+              Sarana Shipping Service to United Kingdom
             </Heading>
             <br />
             <Paragraph className="text-midnight" size="lg">
@@ -37,9 +37,9 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 z-10 flex lg:hidden flex-col justify-center text-center bg-black/30">
+      <div className="absolute inset-0 z-10 flex lg:hidden flex-col justify-center text-center bg-black/30 px-1.5">
         <Heading level={1} className="text-sunflower">
-          Sarana Shipping
+          Sarana Shipping Service to United Kingdom
         </Heading>
         <Paragraph size="lg" className="text-white">
           Your Goods, Our Guarantee

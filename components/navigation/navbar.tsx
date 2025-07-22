@@ -21,7 +21,7 @@ const menuList = [
   },
   {
     name: "Service Announcement",
-    path: "#",
+    path: "/service-announcement",
   },
   {
     name: "More",
