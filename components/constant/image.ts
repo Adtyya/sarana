@@ -8,3 +8,4 @@ export const serviceBox = `${rootPath}service_box.png`;
 export const aboutPageHero = `${rootPath}about_page_hero.jpg`;
 export const servicePageHero = `${rootPath}service_page_hero.jpg`;
 export const trackingPageHero = `${rootPath}tracking_page_hero.jpg`;
+export const tosPageHero = `${rootPath}tos_page_hero.jpg`;
