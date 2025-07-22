@@ -20,11 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className={openSans.className}>
+      <body className={openSans.className} suppressHydrationWarning>
         <Navbar />
-
         {children}
-
         <Footer />
       </body>
     </html>

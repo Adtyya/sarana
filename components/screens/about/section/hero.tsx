@@ -20,7 +20,10 @@ export default function Hero() {
         <div className="grid grid-cols-2 h-full w-full">
           <div></div>
           <div className="w-full h-full bg-white rounded-l-[120px] flex flex-col justify-center px-10">
-            <Heading level={1} className="font-normal text-midnight">
+            <Heading
+              level={1}
+              className="font-normal text-midnight leading-snug"
+            >
               International eCommerce Shipping Solutions Provider
             </Heading>
             <br />
