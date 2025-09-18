@@ -3,6 +3,7 @@ import "./globals.css";
 import { Open_Sans } from "next/font/google";
 import Navbar from "@/components/navigation/navbar";
 import Footer from "@/components/navigation/footer";
+import Sonner from "@/components/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={openSans.className} suppressHydrationWarning>
         <Navbar />
         {children}
+        <Sonner />
         <Footer />
       </body>
     </html>
