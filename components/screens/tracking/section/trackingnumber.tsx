@@ -91,13 +91,13 @@ export default function TrackingNumber() {
                 {/* Case: data courier tidak lengkap */}
                 {item?.status === "Data courier tidak lengkap" ? (
                   <p className="text-red-500 font-medium">
-                    {item?.shipment_id} — {item?.status}
+                    {item?.shipment_id} — NOT FOUND
                   </p>
-                ) : (
+                ) : item?.courier === "DHL" ? (
                   <>
                     {/* Header */}
                     <Paragraph size="lg" className="font-semibold mb-1.5">
-                      {item?.courier} - {item?.tracking_number}
+                      {item?.tracking_number}
                     </Paragraph>
 
                     {/* Origin → Destination */}
@@ -146,7 +146,7 @@ export default function TrackingNumber() {
                       )}
                     </ul>
                   </>
-                )}
+                ) : null}
               </div>
             ))}
           </div>
