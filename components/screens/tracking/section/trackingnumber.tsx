@@ -85,43 +85,68 @@ export default function TrackingNumber() {
           <div className="space-y-4">
             {trackingData.map((item) => (
               <div
-                key={item.shipment_id}
-                className="border rounded-lg p-4 shadow-sm"
+                key={item?.shipment_id}
+                className="border rounded-lg p-4 shadow-sm bg-white"
               >
-                <Paragraph size="lg" className="font-semibold mb-1.5">
-                  {item.courier} - {item.tracking_number}
-                </Paragraph>
-                <Paragraph>
-                  From{" "}
-                  {
-                    item.tracking_data.ShipmentTracking.Shipment.Origin
-                      .LocationName
-                  }{" "}
-                  →{" "}
-                  {
-                    item.tracking_data.ShipmentTracking.Shipment.Destination
-                      .LocationName
-                  }
-                </Paragraph>
-                <Paragraph className="mt-1 text-green-600 font-medium">
-                  Last Event:{" "}
-                  {
-                    item.tracking_data.ShipmentTracking.Shipment.LastEvent
-                      .Description
-                  }
-                </Paragraph>
+                {/* Case: data courier tidak lengkap */}
+                {item?.status === "Data courier tidak lengkap" ? (
+                  <p className="text-red-500 font-medium">
+                    {item?.shipment_id} — {item?.status}
+                  </p>
+                ) : (
+                  <>
+                    {/* Header */}
+                    <Paragraph size="lg" className="font-semibold mb-1.5">
+                      {item?.courier} - {item?.tracking_number}
+                    </Paragraph>
 
-                <ul className="mt-3 space-y-1 text-sm text-gray-700">
-                  {item.tracking_data.ShipmentTracking.Shipment.Timestamps.Timestamp.map(
-                    (ts, idx) => (
-                      <li key={idx} className="border-l-2 border-gray-300 pl-2">
-                        <strong>{ts.TimestampDescription}</strong> —{" "}
-                        {ts.LocationName} (
-                        {new Date(ts.TimestampDateTime).toLocaleString()})
-                      </li>
-                    )
-                  )}
-                </ul>
+                    {/* Origin → Destination */}
+                    <Paragraph>
+                      From{" "}
+                      {item?.tracking_data?.ShipmentTracking?.Shipment?.Origin
+                        ?.LocationName || "-"}{" "}
+                      →{" "}
+                      {item?.tracking_data?.ShipmentTracking?.Shipment
+                        ?.Destination?.LocationName || "-"}
+                    </Paragraph>
+
+                    {/* Last Event */}
+                    {item?.tracking_data?.ShipmentTracking?.Shipment
+                      ?.LastEvent && (
+                      <Paragraph className="mt-1 text-green-600 font-medium">
+                        Last Event:{" "}
+                        {
+                          item?.tracking_data?.ShipmentTracking?.Shipment
+                            ?.LastEvent?.Description
+                        }
+                      </Paragraph>
+                    )}
+
+                    {/* Timeline */}
+                    <ul className="mt-3 space-y-1 text-sm text-gray-700">
+                      {item?.tracking_data?.ShipmentTracking?.Shipment
+                        ?.Timestamps?.Timestamp?.length > 0 ? (
+                        item.tracking_data.ShipmentTracking.Shipment.Timestamps.Timestamp.map(
+                          (ts, idx) => (
+                            <li
+                              key={idx}
+                              className="border-l-2 border-gray-300 pl-2"
+                            >
+                              <strong>{ts?.TimestampDescription}</strong> —{" "}
+                              {ts?.LocationName || "-"} (
+                              {new Date(ts?.TimestampDateTime).toLocaleString()}
+                              )
+                            </li>
+                          )
+                        )
+                      ) : (
+                        <li className="text-gray-400 italic">
+                          No timeline available
+                        </li>
+                      )}
+                    </ul>
+                  </>
+                )}
               </div>
             ))}
           </div>

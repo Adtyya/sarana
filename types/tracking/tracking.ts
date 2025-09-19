@@ -29,6 +29,7 @@ export interface DHLTrackingData {
 export interface TrackingResponse {
   shipment_id: string;
   tracking_number: string;
+  status?: string;
   courier: "DHL" | string;
   tracking_data: DHLTrackingData;
 }
