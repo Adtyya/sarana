@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { appLogoYellow, homePageHero } from "@/components/constant/image";
+import { appLogoYellowNew, homePageHero } from "@/components/constant/image";
 import { Heading } from "@/components/text/heading";
 import { Button } from "@/components/button/button";
 import { Paragraph } from "@/components/text/paragraph";
@@ -20,10 +20,10 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 hidden lg:flex flex-col justify-center text-start bg-black/30">
         <div className="bg-sunflower w-fit px-10 py-5 rounded-tr-3xl rounded-br-3xl flex items-center">
           <Image
-            src={appLogoYellow}
+            src={appLogoYellowNew}
             alt="app_logo_yellow"
-            width={149}
-            height={128}
+            width={298}
+            height={256}
           />
           <Heading className="uppercase text-midnight" level={1}>
             sarana shipping

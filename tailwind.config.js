@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        sunflower: "#FFDE5A",
+        sunflower: "#ffc400",
         midnight: "#311D42",
         golden: "#F8D300",
         peach: "#FFF0C8",

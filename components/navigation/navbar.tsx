@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useState, JSX } from "react";
 import Image from "next/image";
-import { appLogoTransparent } from "@/components/constant/image";
+import { appLogoYellowNew } from "@/components/constant/image";
 import { Paragraph } from "@/components/text/paragraph";
 
 const menuList = [
@@ -48,8 +48,8 @@ export default function Navbar(): JSX.Element {
               className="flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none"
               href="/"
             >
-              <div className="relative w-[160px] h-[51px]">
-                <Image src={appLogoTransparent} alt="app_logo" fill />
+              <div className="relative w-[298px] h-[85px]">
+                <Image src={appLogoYellowNew} alt="app_logo" fill />
               </div>
             </Link>
 
